@@ -37,8 +37,8 @@
 /* Begin PBXFileReference section */
 		EAF430B41CA233F800EEF7E2 /* xingdian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xingdian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF430B81CA233F800EEF7E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = xingdian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = xingdian/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		EAF430BD1CA233F800EEF7E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EAF430BE1CA233F800EEF7E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EAF430C11CA233F800EEF7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,15 +101,12 @@
 		EAF430B61CA233F800EEF7E2 /* xingdian */ = {
 			isa = PBXGroup;
 			children = (
-				EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */,
-				EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */,
+				EAF430EA1CA2351500EEF7E2 /* App */,
+				EAF430EB1CA236BE00EEF7E2 /* SliderMenu */,
+				EAF430B71CA233F800EEF7E2 /* Supporting Files */,
 				EAF430BD1CA233F800EEF7E2 /* ViewController.h */,
 				EAF430BE1CA233F800EEF7E2 /* ViewController.m */,
 				EAF430C01CA233F800EEF7E2 /* Main.storyboard */,
-				EAF430C31CA233F800EEF7E2 /* Assets.xcassets */,
-				EAF430C51CA233F800EEF7E2 /* LaunchScreen.storyboard */,
-				EAF430C81CA233F800EEF7E2 /* Info.plist */,
-				EAF430B71CA233F800EEF7E2 /* Supporting Files */,
 			);
 			path = xingdian;
 			sourceTree = "<group>";
@@ -117,6 +114,9 @@
 		EAF430B71CA233F800EEF7E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAF430C31CA233F800EEF7E2 /* Assets.xcassets */,
+				EAF430C51CA233F800EEF7E2 /* LaunchScreen.storyboard */,
+				EAF430C81CA233F800EEF7E2 /* Info.plist */,
 				EAF430B81CA233F800EEF7E2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +138,22 @@
 				EAF430DE1CA233F800EEF7E2 /* Info.plist */,
 			);
 			path = xingdianUITests;
+			sourceTree = "<group>";
+		};
+		EAF430EA1CA2351500EEF7E2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */,
+				EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EAF430EB1CA236BE00EEF7E2 /* SliderMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SliderMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +223,7 @@
 				TargetAttributes = {
 					EAF430B31CA233F800EEF7E2 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NS9E2DSK82;
 					};
 					EAF430CC1CA233F800EEF7E2 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -411,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = xingdian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peakpoints.xingdian;
@@ -422,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = xingdian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peakpoints.xingdian;
