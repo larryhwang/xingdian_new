@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3652D9F0D3584CACD98AF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A4B3D6BCA4BD9339A89B79 /* libPods.a */; };
+		EA1B0BFB1CA242840031468E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B0BFA1CA242840031468E /* ViewController.m */; };
+		EA1B0C001CA243C60031468E /* HomeVC.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0BFF1CA243C60031468E /* HomeVC.xcassets */; };
 		EAF430B91CA233F800EEF7E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF430B81CA233F800EEF7E2 /* main.m */; };
 		EAF430BC1CA233F800EEF7E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */; };
-		EAF430BF1CA233F800EEF7E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF430BE1CA233F800EEF7E2 /* ViewController.m */; };
 		EAF430C21CA233F800EEF7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF430C01CA233F800EEF7E2 /* Main.storyboard */; };
 		EAF430C41CA233F800EEF7E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF430C31CA233F800EEF7E2 /* Assets.xcassets */; };
 		EAF430C71CA233F800EEF7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF430C51CA233F800EEF7E2 /* LaunchScreen.storyboard */; };
@@ -35,12 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		814CCAF82F079358BF1428A2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A34981929BABBA55E8CB5943 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A9A4B3D6BCA4BD9339A89B79 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1B0BF91CA242840031468E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA1B0BFA1CA242840031468E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA1B0BFF1CA243C60031468E /* HomeVC.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HomeVC.xcassets; sourceTree = "<group>"; };
 		EAF430B41CA233F800EEF7E2 /* xingdian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xingdian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF430B81CA233F800EEF7E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = xingdian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = xingdian/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		EAF430BD1CA233F800EEF7E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EAF430BE1CA233F800EEF7E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EAF430C11CA233F800EEF7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAF430C31CA233F800EEF7E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAF430C61CA233F800EEF7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3652D9F0D3584CACD98AF0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0763CB20CF4022A75492C96D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4B3D6BCA4BD9339A89B79 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0ABFFBE486A0500F859019E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				814CCAF82F079358BF1428A2 /* Pods.debug.xcconfig */,
+				A34981929BABBA55E8CB5943 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA1B0BF71CA241890031468E /* Vender(第三方) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Vender(第三方)";
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		EA1B0BF81CA241930031468E /* Net(网络请求层) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Net(网络请求层)";
+			path = Net;
+			sourceTree = "<group>";
+		};
+		EA1B0BFC1CA242D80031468E /* CarFunction(车辆功能) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CarFunction(车辆功能)";
+			sourceTree = "<group>";
+		};
+		EA1B0BFD1CA2434D0031468E /* Resouce */ = {
+			isa = PBXGroup;
+			children = (
+				EA1B0BFF1CA243C60031468E /* HomeVC.xcassets */,
+			);
+			path = Resouce;
+			sourceTree = "<group>";
+		};
+		EA1B0C021CA246F10031468E /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				EA1B0C061CA2478C0031468E /* const(常量) */,
+				EA1B0C051CA247560031468E /* Macros(宏) */,
+				EA1B0C041CA247120031468E /* Category(分类) */,
+				EA1B0C031CA247040031468E /* DataBase(数据库) */,
+			);
+			name = Expand;
+			sourceTree = "<group>";
+		};
+		EA1B0C031CA247040031468E /* DataBase(数据库) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "DataBase(数据库)";
+			sourceTree = "<group>";
+		};
+		EA1B0C041CA247120031468E /* Category(分类) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Category(分类)";
+			sourceTree = "<group>";
+		};
+		EA1B0C051CA247560031468E /* Macros(宏) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Macros(宏)";
+			sourceTree = "<group>";
+		};
+		EA1B0C061CA2478C0031468E /* const(常量) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "const(常量)";
+			sourceTree = "<group>";
+		};
 		EAF430AB1CA233F800EEF7E2 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +179,8 @@
 				EAF430D01CA233F800EEF7E2 /* xingdianTests */,
 				EAF430DB1CA233F800EEF7E2 /* xingdianUITests */,
 				EAF430B51CA233F800EEF7E2 /* Products */,
+				0ABFFBE486A0500F859019E6 /* Pods */,
+				0763CB20CF4022A75492C96D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,11 +198,16 @@
 			isa = PBXGroup;
 			children = (
 				EAF430EA1CA2351500EEF7E2 /* App */,
-				EAF430EB1CA236BE00EEF7E2 /* SliderMenu */,
+				EAF430EB1CA236BE00EEF7E2 /* SliderMenu(侧滑菜单) */,
+				EAF430EC1CA23E3100EEF7E2 /* HomeVC(首页) */,
+				EAF430EE1CA23ECC00EEF7E2 /* DeviceAlarm(设备警报) */,
+				EAF430ED1CA23E8700EEF7E2 /* DeviceList(设备列表) */,
+				EA1B0BFC1CA242D80031468E /* CarFunction(车辆功能) */,
+				EA1B0BF81CA241930031468E /* Net(网络请求层) */,
+				EA1B0BF71CA241890031468E /* Vender(第三方) */,
+				EA1B0C021CA246F10031468E /* Expand */,
+				EA1B0BFD1CA2434D0031468E /* Resouce */,
 				EAF430B71CA233F800EEF7E2 /* Supporting Files */,
-				EAF430BD1CA233F800EEF7E2 /* ViewController.h */,
-				EAF430BE1CA233F800EEF7E2 /* ViewController.m */,
-				EAF430C01CA233F800EEF7E2 /* Main.storyboard */,
 			);
 			path = xingdian;
 			sourceTree = "<group>";
@@ -149,11 +250,38 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		EAF430EB1CA236BE00EEF7E2 /* SliderMenu */ = {
+		EAF430EB1CA236BE00EEF7E2 /* SliderMenu(侧滑菜单) */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			name = "SliderMenu(侧滑菜单)";
 			path = SliderMenu;
+			sourceTree = "<group>";
+		};
+		EAF430EC1CA23E3100EEF7E2 /* HomeVC(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				EA1B0BF91CA242840031468E /* ViewController.h */,
+				EA1B0BFA1CA242840031468E /* ViewController.m */,
+				EAF430C01CA233F800EEF7E2 /* Main.storyboard */,
+			);
+			name = "HomeVC(首页)";
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		EAF430ED1CA23E8700EEF7E2 /* DeviceList(设备列表) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "DeviceList(设备列表)";
+			path = DeviceList;
+			sourceTree = "<group>";
+		};
+		EAF430EE1CA23ECC00EEF7E2 /* DeviceAlarm(设备警报) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "DeviceAlarm(设备警报)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAF430E11CA233F800EEF7E2 /* Build configuration list for PBXNativeTarget "xingdian" */;
 			buildPhases = (
+				E66CBC485823D4C7E4AB7BCF /* Check Pods Manifest.lock */,
 				EAF430B01CA233F800EEF7E2 /* Sources */,
 				EAF430B11CA233F800EEF7E2 /* Frameworks */,
 				EAF430B21CA233F800EEF7E2 /* Resources */,
+				0EE799A38625FEC02F1B80B8 /* Embed Pods Frameworks */,
+				E0432E79C834DC9119A9FB5E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF430C71CA233F800EEF7E2 /* LaunchScreen.storyboard in Resources */,
+				EA1B0C001CA243C60031468E /* HomeVC.xcassets in Resources */,
 				EAF430C41CA233F800EEF7E2 /* Assets.xcassets in Resources */,
 				EAF430C21CA233F800EEF7E2 /* Main.storyboard in Resources */,
 			);
@@ -282,12 +414,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EE799A38625FEC02F1B80B8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0432E79C834DC9119A9FB5E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E66CBC485823D4C7E4AB7BCF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EAF430B01CA233F800EEF7E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAF430BF1CA233F800EEF7E2 /* ViewController.m in Sources */,
+				EA1B0BFB1CA242840031468E /* ViewController.m in Sources */,
 				EAF430BC1CA233F800EEF7E2 /* AppDelegate.m in Sources */,
 				EAF430B91CA233F800EEF7E2 /* main.m in Sources */,
 			);
@@ -331,6 +511,7 @@
 				EAF430C11CA233F800EEF7E2 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		EAF430C51CA233F800EEF7E2 /* LaunchScreen.storyboard */ = {
@@ -426,10 +607,12 @@
 		};
 		EAF430E21CA233F800EEF7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 814CCAF82F079358BF1428A2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = xingdian/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peakpoints.xingdian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,10 +621,12 @@
 		};
 		EAF430E31CA233F800EEF7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A34981929BABBA55E8CB5943 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = xingdian/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peakpoints.xingdian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +700,7 @@
 				EAF430E31CA233F800EEF7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAF430E41CA233F800EEF7E2 /* Build configuration list for PBXNativeTarget "xingdianTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +709,7 @@
 				EAF430E61CA233F800EEF7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAF430E71CA233F800EEF7E2 /* Build configuration list for PBXNativeTarget "xingdianUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +718,7 @@
 				EAF430E91CA233F800EEF7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
