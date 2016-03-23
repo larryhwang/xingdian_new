@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "MenuView.h"
 #import <MAMapKit/MAMapKit.h>
 @interface HomeViewController () {
     MAMapView *_mapView;
@@ -25,11 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self UISetUp];
-    
-            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
+    [self initNav];
+    self.view.backgroundColor = [UIColor whiteColor];
+//    [self UISetUp];
+//    
+//            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//
 
 }
 
@@ -52,19 +52,8 @@
 
 
 -(void)initLeftMenu {
-    _sideSlipView = [[JKSideSlipView alloc]initWithSender:self];
-    _sideSlipView.backgroundColor = [UIColor redColor];
+
     
-    
-    MenuView *menu = [MenuView menuView];
-    [menu didSelectRowAtIndexPath:^(id cell, NSIndexPath *indexPath) {
-        NSLog(@"click");
-        [_sideSlipView hide];
-        
-    }];
-    menu.items = @[@{@"title":@"1",@"imagename":@"1"},@{@"title":@"2",@"imagename":@"2"},@{@"title":@"3",@"imagename":@"3"},@{@"title":@"4",@"imagename":@"4"}];
-    [_sideSlipView setContentView:menu];
-    [self.navigationController.view addSubview:_sideSlipView];
 }
 
 //UIBarMetricsDefault,
@@ -73,11 +62,11 @@
 //UIBarMetricsCompactPrompt,
 
 -(void)initNav {
-//    [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
-//    UIButton *LeftMenu = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
-//    [LeftMenu setBackgroundColor:[UIColor redColor]];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:LeftMenu];
-//    [LeftMenu addTarget:self action:@selector(showLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
+    UIButton *LeftMenu = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
+    [LeftMenu setBackgroundColor:[UIColor redColor]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:LeftMenu];
+    [LeftMenu addTarget:self action:@selector(showLeftMenu) forControlEvents:UIControlEventTouchUpInside];
   
 //        self.navigationController.navigationBar.translucent = YES ;
 //    self.navigationController.navigationBar.barTintColor = [NavTabbarColor colorWithAlphaComponent:0.5];
@@ -101,10 +90,6 @@
     return theImage;
 }
 
-
--(void)showLeftMenu  {
-    [_sideSlipView switchMenu];
-}
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;

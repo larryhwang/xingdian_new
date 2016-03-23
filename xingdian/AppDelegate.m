@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <MAMapKit/MAMapKit.h>
 #import "HomeViewController.h"
+#import "YCLeftViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,15 +19,36 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    [application setStatusBarHidden:NO];
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     
     HomeViewController *homePage = [[HomeViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homePage];
-//
+
+    
+    HomeViewController *first = [[HomeViewController alloc] init];
+    first.view.backgroundColor = [UIColor blueColor];
+    YCLeftViewController *leftMenuViewController = [[YCLeftViewController alloc] init];
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:nav
+                                                                    leftMenuViewController:leftMenuViewController
+                                                                   rightMenuViewController:nil];
+    sideMenuViewController.mainController = first;
+    sideMenuViewController.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
+    sideMenuViewController.delegate = self;
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 0.6;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = NO;
+    //是否缩小
+    sideMenuViewController.scaleContentView = NO;
+    self.window.rootViewController = sideMenuViewController;
 //    
-   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   self.window.rootViewController = nav;
+//    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+//   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//   self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
 
@@ -65,6 +87,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 @end
