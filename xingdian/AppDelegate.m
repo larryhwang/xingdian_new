@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <MAMapKit/MAMapKit.h>
+#import "HomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,9 +16,28 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+ 
+    HomeViewController *homePage = [[HomeViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homePage];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
+
+      [self initVenderSDKPrama];
+    
+    
     return YES;
 }
+
+
+
+-(void)initVenderSDKPrama {
+    [[MAMapServices sharedServices]setApiKey:MAMapAppKey];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

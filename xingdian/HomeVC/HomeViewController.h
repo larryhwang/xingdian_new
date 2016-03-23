@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  xingdian
 //
 //  Created by FengHua on 3/23/16.
@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JKSideSlipView.h"
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController {
+     JKSideSlipView *_sideSlipView;
+}
 
 
 @end

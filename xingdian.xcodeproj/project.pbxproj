@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		AC3652D9F0D3584CACD98AF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A4B3D6BCA4BD9339A89B79 /* libPods.a */; };
-		EA1B0BFB1CA242840031468E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B0BFA1CA242840031468E /* ViewController.m */; };
+		EA1B0BFB1CA242840031468E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B0BFA1CA242840031468E /* HomeViewController.m */; };
 		EA1B0C001CA243C60031468E /* HomeVC.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0BFF1CA243C60031468E /* HomeVC.xcassets */; };
+		EA1B0C111CA263960031468E /* JKSideSlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B0C0A1CA263960031468E /* JKSideSlipView.m */; };
+		EA1B0C121CA263960031468E /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B0C0C1CA263960031468E /* MenuView.m */; };
+		EA1B0C131CA263960031468E /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0C0D1CA263960031468E /* MenuView.xib */; };
+		EA1B0C141CA263960031468E /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B0C0F1CA263960031468E /* MenuCell.m */; };
+		EA1B0C151CA263960031468E /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0C101CA263960031468E /* MenuCell.xib */; };
 		EAF430B91CA233F800EEF7E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF430B81CA233F800EEF7E2 /* main.m */; };
 		EAF430BC1CA233F800EEF7E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF430BB1CA233F800EEF7E2 /* AppDelegate.m */; };
 		EAF430C21CA233F800EEF7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF430C01CA233F800EEF7E2 /* Main.storyboard */; };
@@ -40,9 +45,19 @@
 		814CCAF82F079358BF1428A2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A34981929BABBA55E8CB5943 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A9A4B3D6BCA4BD9339A89B79 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA1B0BF91CA242840031468E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EA1B0BFA1CA242840031468E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA1B0BF91CA242840031468E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		EA1B0BFA1CA242840031468E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		EA1B0BFF1CA243C60031468E /* HomeVC.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HomeVC.xcassets; sourceTree = "<group>"; };
+		EA1B0C071CA24AD60031468E /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		EA1B0C081CA24B9E0031468E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		EA1B0C091CA263960031468E /* JKSideSlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSideSlipView.h; sourceTree = "<group>"; };
+		EA1B0C0A1CA263960031468E /* JKSideSlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSideSlipView.m; sourceTree = "<group>"; };
+		EA1B0C0B1CA263960031468E /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		EA1B0C0C1CA263960031468E /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		EA1B0C0D1CA263960031468E /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		EA1B0C0E1CA263960031468E /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		EA1B0C0F1CA263960031468E /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		EA1B0C101CA263960031468E /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EAF430B41CA233F800EEF7E2 /* xingdian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xingdian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF430B81CA233F800EEF7E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = xingdian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -137,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				EA1B0C061CA2478C0031468E /* const(常量) */,
-				EA1B0C051CA247560031468E /* Macros(宏) */,
 				EA1B0C041CA247120031468E /* Category(分类) */,
 				EA1B0C031CA247040031468E /* DataBase(数据库) */,
 			);
@@ -158,16 +172,10 @@
 			name = "Category(分类)";
 			sourceTree = "<group>";
 		};
-		EA1B0C051CA247560031468E /* Macros(宏) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Macros(宏)";
-			sourceTree = "<group>";
-		};
 		EA1B0C061CA2478C0031468E /* const(常量) */ = {
 			isa = PBXGroup;
 			children = (
+				EA1B0C071CA24AD60031468E /* Const.h */,
 			);
 			name = "const(常量)";
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 				EAF430C51CA233F800EEF7E2 /* LaunchScreen.storyboard */,
 				EAF430C81CA233F800EEF7E2 /* Info.plist */,
 				EAF430B81CA233F800EEF7E2 /* main.m */,
+				EA1B0C081CA24B9E0031468E /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,6 +262,14 @@
 		EAF430EB1CA236BE00EEF7E2 /* SliderMenu(侧滑菜单) */ = {
 			isa = PBXGroup;
 			children = (
+				EA1B0C091CA263960031468E /* JKSideSlipView.h */,
+				EA1B0C0A1CA263960031468E /* JKSideSlipView.m */,
+				EA1B0C0B1CA263960031468E /* MenuView.h */,
+				EA1B0C0C1CA263960031468E /* MenuView.m */,
+				EA1B0C0D1CA263960031468E /* MenuView.xib */,
+				EA1B0C0E1CA263960031468E /* MenuCell.h */,
+				EA1B0C0F1CA263960031468E /* MenuCell.m */,
+				EA1B0C101CA263960031468E /* MenuCell.xib */,
 			);
 			name = "SliderMenu(侧滑菜单)";
 			path = SliderMenu;
@@ -261,8 +278,8 @@
 		EAF430EC1CA23E3100EEF7E2 /* HomeVC(首页) */ = {
 			isa = PBXGroup;
 			children = (
-				EA1B0BF91CA242840031468E /* ViewController.h */,
-				EA1B0BFA1CA242840031468E /* ViewController.m */,
+				EA1B0BF91CA242840031468E /* HomeViewController.h */,
+				EA1B0BFA1CA242840031468E /* HomeViewController.m */,
 				EAF430C01CA233F800EEF7E2 /* Main.storyboard */,
 			);
 			name = "HomeVC(首页)";
@@ -391,8 +408,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1B0C151CA263960031468E /* MenuCell.xib in Resources */,
 				EAF430C71CA233F800EEF7E2 /* LaunchScreen.storyboard in Resources */,
 				EA1B0C001CA243C60031468E /* HomeVC.xcassets in Resources */,
+				EA1B0C131CA263960031468E /* MenuView.xib in Resources */,
 				EAF430C41CA233F800EEF7E2 /* Assets.xcassets in Resources */,
 				EAF430C21CA233F800EEF7E2 /* Main.storyboard in Resources */,
 			);
@@ -467,9 +486,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA1B0BFB1CA242840031468E /* ViewController.m in Sources */,
+				EA1B0C111CA263960031468E /* JKSideSlipView.m in Sources */,
+				EA1B0BFB1CA242840031468E /* HomeViewController.m in Sources */,
+				EA1B0C141CA263960031468E /* MenuCell.m in Sources */,
 				EAF430BC1CA233F800EEF7E2 /* AppDelegate.m in Sources */,
 				EAF430B91CA233F800EEF7E2 /* main.m in Sources */,
+				EA1B0C121CA263960031468E /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +633,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = xingdian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -625,6 +650,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = xingdian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
