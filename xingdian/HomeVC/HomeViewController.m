@@ -62,19 +62,19 @@
 //UIBarMetricsCompactPrompt,
 
 -(void)initNav {
+    
     [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
-    UIButton *LeftMenu = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
-    [LeftMenu setBackgroundColor:[UIColor redColor]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:LeftMenu];
-    [LeftMenu addTarget:self action:@selector(showLeftMenu) forControlEvents:UIControlEventTouchUpInside];
-  
-//        self.navigationController.navigationBar.translucent = YES ;
-//    self.navigationController.navigationBar.barTintColor = [NavTabbarColor colorWithAlphaComponent:0.5];
-//    self.navigationController.navigationBar.alpha = 0.5 ;
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
-//    self.navigationController.tabBarItem.title = @"消息";
-    [[UIApplication sharedApplication] setStatusBarStyle : [self preferredStatusBarStyle]];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation_icon@3x"]  style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
+    
+    UIButton *MenuBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 26)];
+    UILabel *Tiitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 26)];
+    Tiitle.text = @"星点测试";
+    [Tiitle setTextColor:[UIColor whiteColor]];
+    
+    [MenuBtn setBackgroundImage:[UIImage imageNamed:@"navigation_icon@3x"]  forState:UIControlStateNormal];
+    [MenuBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchDragInside];
+    self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:MenuBtn],[[UIBarButtonItem alloc]initWithCustomView:Tiitle]];
+    
 }
 
 

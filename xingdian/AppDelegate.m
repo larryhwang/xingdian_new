@@ -10,6 +10,7 @@
 #import <MAMapKit/MAMapKit.h>
 #import "HomeViewController.h"
 #import "YCLeftViewController.h"
+#import "XDNavController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +24,7 @@
 
     
     HomeViewController *homePage = [[HomeViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homePage];
+    XDNavController *nav = [[XDNavController alloc]initWithRootViewController:homePage];
 
     
     HomeViewController *first = [[HomeViewController alloc] init];
