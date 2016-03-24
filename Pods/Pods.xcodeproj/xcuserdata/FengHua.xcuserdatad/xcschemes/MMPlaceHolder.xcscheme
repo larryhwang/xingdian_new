@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6DB090FBAC67D1A6F7F76965'
-               BlueprintName = 'AFNetworking'
+               BlueprintIdentifier = '21FA3887ADE168F6246B46E1'
+               BlueprintName = 'MMPlaceHolder'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libAFNetworking.a'>
+               BuildableName = 'libMMPlaceHolder.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
