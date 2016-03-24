@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '21FA3887ADE168F6246B46E1'
+               BlueprintIdentifier = 'A132550282DEC84F3AFA04A5'
                BlueprintName = 'MMPlaceHolder'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libMMPlaceHolder.a'>

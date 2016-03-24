@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import <MAMapKit/MAMapKit.h>
 #include "UIViewController+RESideMenu.h"
+#import "LoginViewController.h"
+
 @interface HomeViewController () {
     MAMapView *_mapView;
 }
@@ -25,12 +27,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initNav];
-    self.view.backgroundColor = [UIColor whiteColor];
-//    [self UISetUp];
-//    
-//            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-//
+     self.view.backgroundColor = [UIColor whiteColor];
+    
+  //  MAUserLocation *dd = [];
+
+    
+    [self UISetUp];
+    LoginViewController *Login  = [LoginViewController new];
+    [self presentViewController:Login animated:YES completion:nil];
+    
+    
+    
+
 
 }
 
@@ -38,8 +46,8 @@
 
 -(void)UISetUp {
     [self initMap];
-    [self initLeftMenu];
-   // [self initNav];
+    [self initNav];
+
 }
 
 
@@ -52,21 +60,11 @@
 }
 
 
--(void)initLeftMenu {
 
-    
-}
-
-//UIBarMetricsDefault,
-//UIBarMetricsCompact,
-//UIBarMetricsDefaultPrompt = 101, // Applicable only in bars with the prompt property, such as UINavigationBar and UISearchBar
-//UIBarMetricsCompactPrompt,
 
 -(void)initNav {
     
     [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation_icon@3x"]  style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
-    
     UIButton *MenuBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 18)];
     UILabel *Tiitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 85, 26)];
     Tiitle.backgroundColor = [UIColor redColor];

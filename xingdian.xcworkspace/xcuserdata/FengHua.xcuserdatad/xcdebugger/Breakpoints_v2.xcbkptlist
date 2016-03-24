@@ -4,19 +4,29 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "xingdian/HomeVC/HomeViewController.m"
-            timestampString = "480473314.063332"
+            filePath = "xingdian/Vender/NetwrokHandle/MHAsiNetworkItem.m"
+            timestampString = "480492931.454865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "@implementation HomeViewController"
-            landmarkType = "3">
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-initWithtype:url:params:delegate:target:action:hashValue:showHUD:successBlock:failureBlock:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -6,8 +6,10 @@
 //  Copyright (c) 2015年 apple. All rights reserved.
 //
 
-#import "YCLeftViewController.h"
+#define ICOVIEW_HEIGHT 60
 
+#import "YCLeftViewController.h"
+#import <Masonry/Masonry.h>
 
 static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControllerCellReuseId";
 
@@ -24,16 +26,31 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    [NS_NOTIFICATION_CENTER addObserver:self selector:@selector(UpdateUserInfo) name:nLoginNotifyCation object:nil];
     
+
+    
+    
+    
+    
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIView *headContentViwe = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 3.5 * NAV_TAB_BAR_HEIGHT)];
     headContentViwe.backgroundColor = NavTabbarColor;
    [self.view addSubview:headContentViwe];
-    
-    
-    
+
+    UIImageView *IconView = [UIImageView new];
+    IconView.backgroundColor = [UIColor yellowColor];
+       IconView.layer.masksToBounds = YES;     //这样的话才可以显示圆角
+      IconView.layer.cornerRadius = ICOVIEW_HEIGHT/2 ;
+    [headContentViwe addSubview:IconView];
+    [IconView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leadingMargin.equalTo(headContentViwe).mas_offset(30);
+        make.topMargin.equalTo(headContentViwe).mas_offset(40 + STATUS_BAR_HEIGHT);
+        make.size.mas_equalTo(CGSizeMake(ICOVIEW_HEIGHT, ICOVIEW_HEIGHT));
+    }];
+
     _lefs = @[@"服务商信息", @"服务条款", @"使用说明", @"用户反馈", @"关于我们"];
     _tableView = [[UITableView alloc] init];
     _tableView.frame = CGRectMake(0, 4*NAV_TAB_BAR_HEIGHT + 10 , self.view.frame.size.width, self.view.frame.size.width - 64);
@@ -121,6 +138,21 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (UIImage*)createImageWithColor: (UIColor*) color
+{
+    CGRect rect=CGRectMake(0,0, 49 , 49);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
+-(void)UpdateUserInfo {
+    XDLog(@"更新头像信息");
 }
 
 @end

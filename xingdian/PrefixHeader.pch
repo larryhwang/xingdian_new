@@ -73,5 +73,17 @@
 
 #define SCNavTabbarSourceName(file) [SCNavTabbarBundleName stringByAppendingPathComponent:file]
 
+#ifdef DEBUG
+#   define XDLog(...) NSLog(__VA_ARGS__)
+#else
+#   define XDLog(...)
+#endif
+
+#import "constParam.h"
+#import "AFNetworking.h"
+#import "MHNetwrok.h"
+#include "HttpTool.h"
+
+
 
 #endif /* PrefixHeader_pch */

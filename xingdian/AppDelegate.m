@@ -11,6 +11,9 @@
 #import "HomeViewController.h"
 #import "YCLeftViewController.h"
 #import "XDNavController.h"
+
+#define MAMapAppKey @"0ad3f46403833893450e6dd8de51e457"
+
 @interface AppDelegate ()
 
 @end
@@ -18,15 +21,11 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
+    [self initVenderSDKPrama];
+    [MHAsiNetworkHandler startMonitoring];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    
     HomeViewController *homePage = [[HomeViewController alloc]init];
     XDNavController *nav = [[XDNavController alloc]initWithRootViewController:homePage];
-
-    
     HomeViewController *first = [[HomeViewController alloc] init];
     first.view.backgroundColor = [UIColor blueColor];
     YCLeftViewController *leftMenuViewController = [[YCLeftViewController alloc] init];
@@ -44,16 +43,11 @@
     //是否缩小
     sideMenuViewController.scaleContentView = NO;
     self.window.rootViewController = sideMenuViewController;
-//    
-//    self.window.backgroundColor = [UIColor whiteColor];
-    
-    
-//   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//   self.window.rootViewController = nav;
+
     [self.window makeKeyAndVisible];
     
 
-      [self initVenderSDKPrama];
+ 
     
     
     return YES;
