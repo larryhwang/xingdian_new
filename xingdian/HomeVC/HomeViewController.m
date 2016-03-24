@@ -31,7 +31,6 @@
     
   //  MAUserLocation *dd = [];
 
-    
     [self UISetUp];
     LoginViewController *Login  = [LoginViewController new];
     [self presentViewController:Login animated:YES completion:nil];
@@ -53,6 +52,8 @@
 
 -(void)initMap{
     _mapView                   = [[MAMapView alloc]initWithFrame:self.view.bounds];
+    _mapView.showsLabels = YES;
+    _mapView.scaleOrigin = CGPointMake(5.f,  (SCREEN_HEIGHT * 1.f)-45.f);
     _mapView.showsUserLocation = YES;
     _mapView.userTrackingMode  = 1;
     [self.view addSubview:_mapView];
@@ -63,14 +64,12 @@
 
 
 -(void)initNav {
-    
     [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
     UIButton *MenuBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 18)];
     UILabel *Tiitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 85, 26)];
     Tiitle.backgroundColor = [UIColor redColor];
     Tiitle.text = @" 星点测试";
     [Tiitle setTextColor:[UIColor whiteColor]];
-    
     [MenuBtn setBackgroundImage:[UIImage imageNamed:@"navigation_icon@3x"]  forState:UIControlStateNormal];
     [MenuBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:MenuBtn],[[UIBarButtonItem alloc]initWithCustomView:Tiitle]];

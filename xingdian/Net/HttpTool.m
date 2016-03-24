@@ -7,7 +7,9 @@
 //
 
 #import "HttpTool.h"
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
+
+#import "UserInfoModel.h"
+#import "MJExtension.h"
 
 @implementation HttpTool
 
@@ -16,9 +18,10 @@
 
     [MHNetworkManager postReqeustWithURL:[NSString stringWithFormat:@"%@/Api/User/Login",BasicUrl] params:pramaDic successBlock:^(NSDictionary *returnData) {
         XDLog(@"%@",returnData);
-        XDLog(@"登陆通知");
+
+        UserInfoModel *user = [UserInfoModel mj_objectWithKeyValues:returnData[@"Item"]];
         [LoinVC dismissViewControllerAnimated:YES completion:nil];
-        [NS_NOTIFICATION_CENTER postNotificationName:nLoginNotifyCation object:nil];
+        [NS_NOTIFICATION_CENTER postNotificationName:nLoginNotifyCation object:user];
     } failureBlock:^(NSError *error) {
         XDLog(@"%@",error);
     } showHUD:YES];
