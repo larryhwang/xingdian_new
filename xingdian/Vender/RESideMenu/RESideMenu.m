@@ -81,13 +81,18 @@
 
 - (void)commonInit
 {
+    
+    
+#pragma mark 侧滑动画的参数设定
+    
     _menuViewContainer = [[UIView alloc] init];
     _contentViewContainer = [[UIView alloc] init];
     
     _animationDuration = 0.35f;
     _interactivePopGestureRecognizerEnabled = YES;
   
-    _menuViewControllerTransformation = CGAffineTransformMakeScale(1.5f, 1.5f);
+    //此处是用来缩放的参数
+    _menuViewControllerTransformation = CGAffineTransformMakeScale(1.0f, 1.0f);  //两者都是1的话 就在侧滑时不会缩放了
     
     _scaleContentView = YES;
     _scaleBackgroundImageView = YES;
@@ -102,7 +107,10 @@
     
     _bouncesHorizontally = YES;
     
-    _panGestureEnabled = YES;
+    
+    //是否关闭手势
+    _panGestureEnabled = NO;
+    
     _panFromEdge = YES;
     _panMinimumOpenThreshold = 60.0;
     
@@ -112,8 +120,8 @@
     _contentViewShadowOpacity = 0.4f;
     _contentViewShadowRadius = 8.0f;
     _contentViewFadeOutAlpha = 1.0f;
-    _contentViewInLandscapeOffsetCenterX = 30.f;
-    _contentViewInPortraitOffsetCenterX  = 30.f;
+    _contentViewInLandscapeOffsetCenterX = 30.f; //横屏时，此值越大，左侧就范围就越小
+    _contentViewInPortraitOffsetCenterX  =   SCREEN_WIDTH * 0.3f;    //(150.f; //竖屏时，此值越大，左侧就范围就越小
     _contentViewScaleValue = 0.7f;
 }
 
@@ -125,26 +133,66 @@
     self = [self init];
     if (self) {
         _contentViewController = contentViewController;
+        
         _leftMenuViewController = leftMenuViewController;
-        _rightMenuViewController = rightMenuViewController;
+
+        _rightMenuViewController = rightMenuViewController;  //这是右视图，同时支持右滑动
     }
     return self;
 }
 
+
 - (void)presentLeftMenuViewController
 {
+#pragma 非原作者添加
+    
+    
+    UIView *bg = [[UIView alloc] initWithFrame:self.contentViewController.view.bounds];
+    NSLog(@"%@",self.contentViewController);
+    bg.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+    bg.tag = 10;
+    
+//    // Create a mask layer and the frame to determine what will be visible in the view.
+//    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+//    CGRect maskRect = CGRectMake(50, 50, 20, 20);
+//    
+//    // Create a path and add the rectangle in it.
+//    CGMutablePathRef path = CGPathCreateMutable();
+//    CGPathAddRect(path, nil, maskRect);
+//    
+//    // Set the path to the mask layer.
+//    [maskLayer setPath:path];
+//    
+//    // Release the path since it's not covered by ARC.
+//    CGPathRelease(path);
+//    
+//    // Set the mask of the view.
+//    bg.layer.mask = maskLayer;
+    
+    [self.contentViewController.view addSubview:bg];
+    
+    
+#pragma 非原作者添加
+    
     [self presentMenuViewContainerWithMenuViewController:self.leftMenuViewController];
     [self showLeftMenuViewController];
 }
 
 - (void)presentRightMenuViewController
 {
+    NSLog(@"%@",self.rightMenuViewController);
     [self presentMenuViewContainerWithMenuViewController:self.rightMenuViewController];
     [self showRightMenuViewController];
 }
 
 - (void)hideMenuViewController
 {
+    for (UIView *view in self.contentViewController.view.subviews) {
+        if (view.tag == 10) {
+            [view removeFromSuperview];
+        }
+    }
+    
     [self hideMenuViewControllerAnimated:YES];
 }
 
@@ -262,7 +310,7 @@
     }
     self.menuViewContainer.alpha = !self.fadeMenuView ?: 0;
     if (self.scaleBackgroundImageView)
-        self.backgroundImageView.transform = CGAffineTransformMakeScale(1.7f, 1.7f);
+        self.backgroundImageView.transform = CGAffineTransformMakeScale(1.7f, 2.1f);
     
     if ([self.delegate conformsToProtocol:@protocol(RESideMenuDelegate)] && [self.delegate respondsToSelector:@selector(sideMenu:willShowMenuViewController:)]) {
         [self.delegate sideMenu:self willShowMenuViewController:menuViewController];
@@ -858,6 +906,3 @@
 }
 
 @end
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com

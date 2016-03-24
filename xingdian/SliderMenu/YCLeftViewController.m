@@ -25,11 +25,18 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    _lefs = @[@"首页", @"客服热线", @"用户反馈", @"软件设置", @"关于我们"];
+    
+    UIView *headContentViwe = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 3.5 * NAV_TAB_BAR_HEIGHT)];
+    headContentViwe.backgroundColor = NavTabbarColor;
+   [self.view addSubview:headContentViwe];
+    
+    
+    
+    _lefs = @[@"服务商信息", @"服务条款", @"使用说明", @"用户反馈", @"关于我们"];
     _tableView = [[UITableView alloc] init];
-    _tableView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.width - 64);
+    _tableView.frame = CGRectMake(0, 4*NAV_TAB_BAR_HEIGHT + 10 , self.view.frame.size.width, self.view.frame.size.width - 64);
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kYCLeftViewControllerCellReuseId];
@@ -117,6 +124,3 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 }
 
 @end
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com

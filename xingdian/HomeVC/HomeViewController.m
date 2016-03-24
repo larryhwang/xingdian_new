@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import <MAMapKit/MAMapKit.h>
+#include "UIViewController+RESideMenu.h"
 @interface HomeViewController () {
     MAMapView *_mapView;
 }
@@ -66,13 +67,14 @@
     [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation_icon@3x"]  style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
-    UIButton *MenuBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 26)];
-    UILabel *Tiitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60, 26)];
-    Tiitle.text = @"星点测试";
+    UIButton *MenuBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 18)];
+    UILabel *Tiitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 85, 26)];
+    Tiitle.backgroundColor = [UIColor redColor];
+    Tiitle.text = @" 星点测试";
     [Tiitle setTextColor:[UIColor whiteColor]];
     
     [MenuBtn setBackgroundImage:[UIImage imageNamed:@"navigation_icon@3x"]  forState:UIControlStateNormal];
-    [MenuBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchDragInside];
+    [MenuBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:MenuBtn],[[UIBarButtonItem alloc]initWithCustomView:Tiitle]];
     
 }
@@ -94,4 +96,6 @@
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+
+
 @end
