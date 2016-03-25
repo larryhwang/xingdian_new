@@ -29,7 +29,6 @@
     [super viewDidLoad];
      self.view.backgroundColor = [UIColor whiteColor];
     
-  //  MAUserLocation *dd = [];
 
     [self UISetUp];
     LoginViewController *Login  = [LoginViewController new];
@@ -64,15 +63,19 @@
 
 
 -(void)initNav {
-    [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
-    UIButton *MenuBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 18)];
-    UILabel *Tiitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 85, 26)];
+    UIButton *MenuBtn      = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 18)];
+    UILabel *Tiitle        = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 85, 26)];
     Tiitle.backgroundColor = [UIColor redColor];
-    Tiitle.text = @" 星点测试";
+    Tiitle.text            =   NSLocalizedString(@"星点测试",nil);      //MyLocal(@"登录");//;MyLocal(@"登录")
+
+    [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:NavTabbarColor] forBarMetrics:UIBarMetricsDefault];
     [Tiitle setTextColor:[UIColor whiteColor]];
     [MenuBtn setBackgroundImage:[UIImage imageNamed:@"navigation_icon@3x"]  forState:UIControlStateNormal];
     [MenuBtn addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:MenuBtn],[[UIBarButtonItem alloc]initWithCustomView:Tiitle]];
+    
+ //   UIButton *MenuBtn      = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 26, 18)];
+    
     
 }
 

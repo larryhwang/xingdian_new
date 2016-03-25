@@ -79,6 +79,9 @@
 #   define XDLog(...)
 #endif
 
+
+#define MyLocal(x, ...) NSLocalizedString(x, nil)
+
 #import "constParam.h"
 #import "AFNetworking.h"
 #import "MHNetwrok.h"
