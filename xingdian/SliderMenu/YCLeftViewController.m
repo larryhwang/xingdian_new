@@ -14,7 +14,10 @@
 
 static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControllerCellReuseId";
 
-@interface YCLeftViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface YCLeftViewController ()<UITableViewDataSource, UITableViewDelegate> {
+    NSString *_loginName;
+    NSString *_userName;
+}
 
 @property (nonatomic, strong) NSArray   *lefs;
 @property (nonatomic, assign) NSInteger previousRow;
@@ -31,7 +34,7 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 -(UILabel *)LoginNameLab {
     if (!_LoginNameLab) {
-        _LoginNameLab = [UILabel new];
+        _LoginNameLab                    = [UILabel new];
         [self.HeadContentView addSubview:_LoginNameLab];
     }
     return _LoginNameLab;
@@ -39,8 +42,8 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 -(UILabel *)UserNameLab {
     if (!_UserNameLab) {
-        _UserNameLab = [UILabel new];
-        _UserNameLab.backgroundColor = [UIColor redColor];
+        _UserNameLab                     = [UILabel new];
+        _UserNameLab.backgroundColor     = [UIColor redColor];
         [self.HeadContentView addSubview:_UserNameLab];
     }
     return _UserNameLab;
@@ -48,20 +51,29 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 -(UIView *)HeadContentView{
     if (!_HeadContentView) {
-        _HeadContentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 3.5 * NAV_TAB_BAR_HEIGHT)];
+        _HeadContentView                 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 3.5 * NAV_TAB_BAR_HEIGHT)];
         _HeadContentView.backgroundColor = NavTabbarColor;
         [self.view addSubview:_HeadContentView];
     }
     return _HeadContentView;
 }
 
-
+-(UIImageView *)IcoView {
+    if (!_IcoView) {
+        _IcoView           = [UIImageView new];
+        _IcoView.backgroundColor     = [UIColor yellowColor];
+        _IcoView.layer.masksToBounds = YES;
+        _IcoView.layer.cornerRadius      = ICOVIEW_HEIGHT/2 ;
+        [self.HeadContentView addSubview:_IcoView];
+    }
+    return _IcoView;
+}
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self headViewSet];
+
     [NS_NOTIFICATION_CENTER addObserver:self selector:@selector(UpdateUserInfo:) name:nLoginNotifyCation object:nil];
     self.view.backgroundColor      = [UIColor whiteColor];
     
@@ -72,7 +84,6 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
     _tableView.delegate            = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kYCLeftViewControllerCellReuseId];
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
-
     self.tableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.tableView];
 }
@@ -80,33 +91,32 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 
 -(void)headViewSet {
-    //头像
-    UIImageView *IconView          = [UIImageView new];
-    self.IcoView.backgroundColor       = [UIColor yellowColor];
-    self.IcoView.layer.masksToBounds   = YES;
-    IconView.layer.cornerRadius    = ICOVIEW_HEIGHT/2 ;
-    [IconView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.UserNameLab.text = @"这是用户名哟";
+    self.LoginNameLab.text = @"这是用户名哟淡淡的";
+    [self.IcoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leadingMargin.equalTo(self.HeadContentView).mas_offset(30);
         make.topMargin.equalTo(self.HeadContentView).mas_offset(40 + STATUS_BAR_HEIGHT);
         make.size.mas_equalTo(CGSizeMake(ICOVIEW_HEIGHT, ICOVIEW_HEIGHT));
     }];
-    self.IcoView = IconView ;
+    
+    if ([self isLoginNameTaller]) {         //登陆名更长
+        [self.LoginNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.IcoView.mas_right).mas_offset(10);
+            make.top.equalTo(self.IcoView.mas_centerY).mas_offset(0);
+        }];
+        
+        [self.UserNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.LoginNameLab.mas_centerX).mas_offset(0);
+            make.bottom.equalTo(self.IcoView.mas_centerY).mas_offset(0);
+        }];
+    } else { //用户名更长
+        
+    }
+    
 
 
-    
-    //用户名
-    self.UserNameLab.text = @"这是用户名哟";
-    [self.HeadContentView addSubview:self.UserNameLab];
-    [self.HeadContentView addSubview:IconView];
-   [self.UserNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-       make.leadingMargin.equalTo(IconView).mas_offset(50);
-//        make.bottomMargin.equalTo(IconView).centerY.with.offset(0);
-//        make.size.mas_equalTo(CGSizeMake(ICOVIEW_HEIGHT, ICOVIEW_HEIGHT));
-       
-    }];
-    
-    
-    //登陆名
+
+
 
 }
 
@@ -200,9 +210,21 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 -(void)UpdateUserInfo:(NSNotification *)notify {
     XDLog(@"更新");
+    self.UserNameLab.text = @"这是用户名哟";
+    self.LoginNameLab.text = @"这是用户名哟淡淡的";
     UserInfoModel *user = notify.object;
+    _loginName =@"这是用户名哟淡淡的";// user.LoginName;
+    _userName =@"这是用户名哟";//user.UserName;
+    [self headViewSet];
     NSLog(@"更新名字:%@",user.LoginName);
+}
 
+-(BOOL)isLoginNameTaller {
+    if ([_loginName length] > [_userName length]) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
