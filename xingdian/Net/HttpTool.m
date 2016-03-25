@@ -18,7 +18,7 @@
 
     [MHNetworkManager postReqeustWithURL:[NSString stringWithFormat:@"%@/Api/User/Login",BasicUrl] params:pramaDic successBlock:^(NSDictionary *returnData) {
         XDLog(@"%@",returnData);
-
+        [[NSUserDefaults standardUserDefaults] setObject:returnData[@"AccessToken"] forKey:@"APIToken"];
         UserInfoModel *user = [UserInfoModel mj_objectWithKeyValues:returnData[@"Item"]];
         [LoinVC dismissViewControllerAnimated:YES completion:nil];
         [NS_NOTIFICATION_CENTER postNotificationName:nLoginNotifyCation object:user];

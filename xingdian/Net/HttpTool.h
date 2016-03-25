@@ -13,4 +13,7 @@
 
 +(void)doLogoinRequsestWithDic:(NSDictionary *)pramaDic andLoginUI:(UIViewController *)LoinVC;
 
+
++(void)doCarsMonitorRequsetWithDic:(NSDictionary *)parmDic ;
+
 @end

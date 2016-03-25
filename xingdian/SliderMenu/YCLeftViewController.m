@@ -223,6 +223,8 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
     self.LoginNameLab.text = @"这是用户名哟淡淡的";
     UserInfoModel *user    = notify.object;
 
+
+    
     [self headViewSet];
     NSLog(@"更新名字:%@",user.LoginName);
 }
