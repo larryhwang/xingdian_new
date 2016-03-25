@@ -148,6 +148,8 @@
 		EABCB2721CA51FCA005080D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EABCB2761CA520A4005080D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EABCB2781CA520A7005080D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EABCB27A1CA53DC1005080D2 /* APP标准API接口说明.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "APP标准API接口说明.doc"; sourceTree = "<group>"; };
+		EABCB27B1CA53DC1005080D2 /* API.dtapi */ = {isa = PBXFileReference; lastKnownFileType = file; path = API.dtapi; sourceTree = "<group>"; };
 		EAF430B41CA233F800EEF7E2 /* xingdian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xingdian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF430B81CA233F800EEF7E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAF430BA1CA233F800EEF7E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = xingdian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -391,9 +393,19 @@
 			path = NavImage;
 			sourceTree = "<group>";
 		};
+		EABCB2791CA53DA6005080D2 /* Xixi */ = {
+			isa = PBXGroup;
+			children = (
+				EABCB27A1CA53DC1005080D2 /* APP标准API接口说明.doc */,
+				EABCB27B1CA53DC1005080D2 /* API.dtapi */,
+			);
+			name = Xixi;
+			sourceTree = "<group>";
+		};
 		EAF430AB1CA233F800EEF7E2 = {
 			isa = PBXGroup;
 			children = (
+				EABCB2791CA53DA6005080D2 /* Xixi */,
 				EAF430B61CA233F800EEF7E2 /* xingdian */,
 				EAF430D01CA233F800EEF7E2 /* xingdianTests */,
 				EAF430DB1CA233F800EEF7E2 /* xingdianUITests */,
