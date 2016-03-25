@@ -91,8 +91,8 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 
 -(void)headViewSet {
-    self.UserNameLab.text = @"这是用户名哟";
-    self.LoginNameLab.text = @"这是用户名哟淡淡的";
+    self.UserNameLab.text = @"得到的";
+    self.LoginNameLab.text = @"这是这是用户名哟";
     [self.IcoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leadingMargin.equalTo(self.HeadContentView).mas_offset(30);
         make.topMargin.equalTo(self.HeadContentView).mas_offset(40 + STATUS_BAR_HEIGHT);
@@ -110,7 +110,15 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
             make.bottom.equalTo(self.IcoView.mas_centerY).mas_offset(0);
         }];
     } else { //用户名更长
+        [self.UserNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.IcoView.mas_right).mas_offset(10);
+            make.bottom.equalTo(self.IcoView.mas_centerY).mas_offset(0);
+        }];
         
+        [self.LoginNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.UserNameLab.mas_centerX).mas_offset(0);
+            make.top.equalTo(self.IcoView.mas_centerY).mas_offset(10);
+        }];
     }
     
 
@@ -197,12 +205,13 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 }
 - (UIImage*)createImageWithColor: (UIColor*) color
 {
-    CGRect rect=CGRectMake(0,0, 49 , 49);
-    UIGraphicsBeginImageContext(rect.size);
+    CGRect rect          = CGRectMake(0,0, 49 , 49);
+    UIImage *theImage    = UIGraphicsGetImageFromCurrentImageContext();
     CGContextRef context = UIGraphicsGetCurrentContext();
+    UIGraphicsBeginImageContext(rect.size);
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+
     UIGraphicsEndImageContext();
     return theImage;
 }
@@ -210,17 +219,18 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
 
 -(void)UpdateUserInfo:(NSNotification *)notify {
     XDLog(@"更新");
-    self.UserNameLab.text = @"这是用户名哟";
+    self.UserNameLab.text  = @"这是用户名哟";
     self.LoginNameLab.text = @"这是用户名哟淡淡的";
-    UserInfoModel *user = notify.object;
-    _loginName =@"这是用户名哟淡淡的";// user.LoginName;
-    _userName =@"这是用户名哟";//user.UserName;
+    UserInfoModel *user    = notify.object;
+
     [self headViewSet];
     NSLog(@"更新名字:%@",user.LoginName);
 }
 
 -(BOOL)isLoginNameTaller {
-    if ([_loginName length] > [_userName length]) {
+   // if ([_loginName length] > [_userName length]) {
+    if ( [self.LoginNameLab.text length] > [self.UserNameLab.text length]) {
+
         return YES;
     } else {
         return NO;

@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xingdian/SliderMenu/YCLeftViewController.m"
-            timestampString = "480570170.395154"
+            timestampString = "480571322.721119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264">
+            startingLineNumber = "276"
+            endingLineNumber = "276">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -66,27 +66,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xingdian/SliderMenu/YCLeftViewController.m"
-            timestampString = "480570170.395154"
+            timestampString = "480571322.721119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "xingdian/Net/HttpTool.m"
-            timestampString = "480566040.735874"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "+doLogoinRequsestWithDic:andLoginUI:"
-            landmarkType = "5">
+            startingLineNumber = "273"
+            endingLineNumber = "273">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,22 +96,22 @@
                   moduleName = "xingdian"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chenkaiquan/Documents/xingdian/xingdian/SliderMenu/YCLeftViewController.m"
-                  timestampString = "480570191.499579"
+                  timestampString = "480571165.923224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
                   endingLineNumber = "106"
-                  offsetFromSymbolStart = "792">
+                  offsetFromSymbolStart = "836">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_120"
+                  symbolName = "__copy_helper_block_122"
                   moduleName = "xingdian"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chenkaiquan/Documents/xingdian/xingdian/SliderMenu/YCLeftViewController.m"
-                  timestampString = "480570191.499808"
+                  timestampString = "480571165.923357"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -138,11 +122,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_121"
+                  symbolName = "__destroy_helper_block_123"
                   moduleName = "xingdian"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chenkaiquan/Documents/xingdian/xingdian/SliderMenu/YCLeftViewController.m"
-                  timestampString = "480570191.499945"
+                  timestampString = "480571165.923475"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -175,11 +159,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xingdian/SliderMenu/YCLeftViewController.m"
-            timestampString = "480570170.395154"
+            timestampString = "480571137.754682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
             endingLineNumber = "223"
+            landmarkName = "-UpdateUserInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "xingdian/SliderMenu/YCLeftViewController.m"
+            timestampString = "480571154.630441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-headViewSet"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "xingdian/SliderMenu/YCLeftViewController.m"
+            timestampString = "480571322.721119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-isLoginNameTaller"
             landmarkType = "5">
          </BreakpointContent>
@@ -191,12 +207,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xingdian/SliderMenu/YCLeftViewController.m"
-            timestampString = "480570187.119252"
+            timestampString = "480571322.721119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "-UpdateUserInfo:"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-isLoginNameTaller"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
