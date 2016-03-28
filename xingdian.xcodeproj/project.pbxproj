@@ -43,6 +43,8 @@
 		EA1B0CD81CA295B30031468E /* navigation_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0CD11CA295B30031468E /* navigation_icon.png */; };
 		EA1B0CD91CA295B30031468E /* navigation_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0CD21CA295B30031468E /* navigation_icon@2x.png */; };
 		EA1B0CDA1CA295B30031468E /* navigation_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1B0CD31CA295B30031468E /* navigation_icon@3x.png */; };
+		EA34EF081CA8D131002D964F /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA34EF071CA8D131002D964F /* CustomCalloutView.m */; };
+		EA34EF0B1CA8DD45002D964F /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA34EF0A1CA8DD45002D964F /* CustomAnnotationView.m */; };
 		EABCB26B1CA51F36005080D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABCB2691CA51F36005080D2 /* Info.plist */; };
 		EABCB26E1CA51FBC005080D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EABCB2701CA51FBC005080D2 /* InfoPlist.strings */; };
 		EABCB2751CA520A4005080D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EABCB2771CA520A4005080D2 /* Localizable.strings */; };
@@ -142,6 +144,10 @@
 		EA1B0CD11CA295B30031468E /* navigation_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_icon.png; sourceTree = "<group>"; };
 		EA1B0CD21CA295B30031468E /* navigation_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_icon@2x.png"; sourceTree = "<group>"; };
 		EA1B0CD31CA295B30031468E /* navigation_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_icon@3x.png"; sourceTree = "<group>"; };
+		EA34EF061CA8D131002D964F /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
+		EA34EF071CA8D131002D964F /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
+		EA34EF091CA8DD45002D964F /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		EA34EF0A1CA8DD45002D964F /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 		EABCB26A1CA51F36005080D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/Info.plist"; sourceTree = "<group>"; };
 		EABCB26F1CA51FBC005080D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EABCB2711CA51FCA005080D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
@@ -393,6 +399,18 @@
 			path = NavImage;
 			sourceTree = "<group>";
 		};
+		EA34EF051CA8CFE6002D964F /* PublicView(公共视图) */ = {
+			isa = PBXGroup;
+			children = (
+				EA34EF091CA8DD45002D964F /* CustomAnnotationView.h */,
+				EA34EF0A1CA8DD45002D964F /* CustomAnnotationView.m */,
+				EA34EF061CA8D131002D964F /* CustomCalloutView.h */,
+				EA34EF071CA8D131002D964F /* CustomCalloutView.m */,
+			);
+			name = "PublicView(公共视图)";
+			path = PublicView;
+			sourceTree = "<group>";
+		};
 		EABCB2791CA53DA6005080D2 /* Xixi */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +455,7 @@
 				EA1B0BFC1CA242D80031468E /* CarFunction(车辆功能) */,
 				EA1B0BF81CA241930031468E /* Net(网络请求层) */,
 				EA1B0BF71CA241890031468E /* Vender(第三方) */,
+				EA34EF051CA8CFE6002D964F /* PublicView(公共视图) */,
 				EA0CC7A11CA3B3630067F158 /* PublicModel(公共模型) */,
 				EA1B0C021CA246F10031468E /* Expand */,
 				EA1B0CC81CA293740031468E /* Other */,
@@ -738,9 +757,11 @@
 				EA0CC79D1CA3B0030067F158 /* MJRefreshHeaderView.m in Sources */,
 				EA0CC79B1CA3B0030067F158 /* MJRefreshConst.m in Sources */,
 				EA0CC7AA1CA3B4B60067F158 /* DTApiBaseBean.m in Sources */,
+				EA34EF0B1CA8DD45002D964F /* CustomAnnotationView.m in Sources */,
 				EA1B0C591CA282960031468E /* YCLeftViewController.m in Sources */,
 				EA0CC79F1CA3B0030067F158 /* UIScrollView+MJRefresh.m in Sources */,
 				EA0CC7A01CA3B0030067F158 /* UIView+MJExtension.m in Sources */,
+				EA34EF081CA8D131002D964F /* CustomCalloutView.m in Sources */,
 				EA0CC7BB1CA3B9600067F158 /* MHAsiNetworkHandler.m in Sources */,
 				EA0CC7BE1CA3B9600067F158 /* MHUploadParam.m in Sources */,
 				EA0CC79C1CA3B0030067F158 /* MJRefreshFooterView.m in Sources */,
