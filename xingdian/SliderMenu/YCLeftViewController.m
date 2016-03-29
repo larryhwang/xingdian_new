@@ -40,9 +40,13 @@ static NSString * const kYCLeftViewControllerCellReuseId = @"kYCLeftViewControll
     return _LoginNameLab;
 }
 
+
+
+
 -(UILabel *)UserNameLab {
     if (!_UserNameLab) {
         _UserNameLab                     = [UILabel new];
+        _UserNameLab.backgroundColor     = [UIColor redColor];
         _UserNameLab.backgroundColor     = [UIColor redColor];
         [self.HeadContentView addSubview:_UserNameLab];
     }

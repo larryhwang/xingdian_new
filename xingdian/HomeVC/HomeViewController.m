@@ -21,6 +21,7 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *annotas;
+@property (nonatomic, strong) NSMutableArray *popViews;
 @property (nonatomic, strong) MAUserLocation *CurrentLocation;
 
 @end
@@ -33,6 +34,14 @@
         _annotas = [NSMutableArray new];
     }
     return _annotas;
+}
+
+
+-(NSMutableArray *)popViews {
+    if (!_popViews) {
+        _popViews = [NSMutableArray new];
+    }
+    return _popViews;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -69,6 +78,7 @@
   //    [_mapView showAnnotations:self.annotas animated:YES];
     
     [_mapView setCenterCoordinate:coordinates[0] animated:YES];
+
     
        [_mapView setZoomLevel:17];   //17为比较合适
 
@@ -80,6 +90,7 @@
     [self initMap];
     [self initNav];
     [self initFuncBtns];
+ 
 
 }
 
@@ -148,12 +159,18 @@
 
 -(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation {
 
+    
+    
+    NSLog(@"%f",annotation.coordinate.latitude);
+    
     //大头针显示的位置
     if ([annotation isKindOfClass:[MAPointAnnotation class]])
     {
         static NSString *customReuseIndetifier = @"customReuseIndetifier";
         
         CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifier];
+        
+        annotationView.canShowCallout = NO;
         
         if (annotationView == nil)
         {
@@ -166,7 +183,8 @@
         
         annotationView.portrait = [UIImage imageNamed:@"hema.png"];
         annotationView.name     = @"河马";
-        
+        [self.popViews addObject:annotationView];  //气泡数组
+        [self update];
         return annotationView;
     }
     
@@ -199,15 +217,56 @@ updatingLocation:(BOOL)updatingLocation
 
 
 -(void)initFuncBtns {
-    UIButton *showUserLoc = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT -30, 40, 20)];
+    //人的位置
+    UIButton *showUserLoc = [[UIButton alloc]initWithFrame:CGRectMake(10, SCREEN_HEIGHT-133 , 25, 25)];
     showUserLoc.backgroundColor = [UIColor redColor];
     [showUserLoc addTarget:self action:@selector(showWhereIam) forControlEvents:UIControlEventTouchUpInside];
     [_mapView addSubview:showUserLoc];
+    
+    //左切换车
+    UIButton *LeftChoseCar = [UIButton new];
+    [_mapView addSubview:LeftChoseCar];
+    [LeftChoseCar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(25, 25));   //设置大小
+        make.centerY.mas_equalTo(_mapView.mas_centerY);    // 设置其位于父视图的Y的中心位置
+        make.left.mas_equalTo(_mapView).with.offset(0);    //左边相对右边是0距离
+    }];
+    LeftChoseCar.backgroundColor = [UIColor brownColor];
+    
+    [LeftChoseCar addTarget:self action:@selector(SwicthCar) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    
+    //右切换车
+    UIButton *RightChoseCar = [UIButton new];
+    [_mapView addSubview:RightChoseCar];
+    [RightChoseCar mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.size.mas_equalTo(CGSizeMake(25, 25));   //设置大小
+       make.centerY.mas_equalTo(_mapView.mas_centerY);    // 设置其位于父视图的Y的中心位置
+        make.right.mas_equalTo(_mapView).with.offset(0);
+    }];
+                               
+    RightChoseCar.backgroundColor = [UIColor brownColor];
+    [RightChoseCar addTarget:self action:@selector(SwicthCar) forControlEvents:UIControlEventTouchUpInside];
+    [_mapView addSubview:RightChoseCar];
 }
 
 
 -(void)showWhereIam {
     [_mapView setCenterCoordinate:self.CurrentLocation.location.coordinate animated:YES];
+}
+
+-(void)SwicthCar {
+    //链表指针 ?
+       [self.popViews[0] setSelected:NO animated:YES];  //一进来就弹窗一个
+    [self.popViews[2] setSelected:YES animated:YES];
+}
+
+/**
+ *  测试 ,先弹出一个气泡
+ */
+-(void)update{
+       [self.popViews[0] setSelected:YES animated:YES];  //一进来就弹窗一个
 }
 
 @end
